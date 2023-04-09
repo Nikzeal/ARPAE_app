@@ -2,7 +2,7 @@
   <head>
 
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/scriptAccesso.js"></script> <!-- AGGIUNTO SCRIPT -->
+    <script src="../js/scriptAccesso.js"  async defer></script> <!-- AGGIUNTO SCRIPT -->
 
   
   </head>
@@ -13,16 +13,18 @@
       <form onsubmit="return false" id="form_accesso">
 
         <!-- CASELLE DI TESTO -->
-        Username: <input type="text" name="username" id="username" required><br>
+        Username: <input class="input_text" type="text" name="username" id="username" required><br>
 
         <!-- PASSWORD -->
-        Password: <input type="password" name="password" id="password" required><br>
+        Password: <input class="input_text" type="password" name="password" id="password" required><br>
+        <br>
+        <input type="submit" name="send" value="INVIA" class="submit">
         <br>
         <a href=''>Password dimenticata?</a>
-        <input type="submit" name="send" value="INVIA" class="pulsante_invia">
+        
 
         <!-- LABEL ERRORE -->
-        <label id="msg_errore"></label>
+        <label class="error" id="msg_errore"></label>
         <br>
       </form>
 
