@@ -1,0 +1,33 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="../style/style.css">
+<script src="js/scriptAccesso.js"></script> <!-- AGGIUNTO SCRIPT -->
+
+<br>
+</head>
+<body>
+
+<div>
+<h3>BENVENUTO!</h3>
+<form method="post" action="accesso/accesso.php">
+
+<!-- CASELLE DI TESTO -->
+Username: <input type="text" name="username" required><br>
+
+<!-- PASSWORD -->
+Password: <input type="password" name="password" id="password" required><br>
+<br>
+<a href='editUser/forgotPassword.php'>Password dimenticata?</a>
+<input type="submit" name="send" value="INVIA" class="pulsante_invia">
+
+<!-- LABEL ERRORE -->
+  <label id="msg_errore"></label>
+  <br><br>
+</form>
+
+<a href='../registrazione/zucco_registrazione.html'><button>REGISTRATI</button></a>
+
+</div>
+</body>
+</html>
