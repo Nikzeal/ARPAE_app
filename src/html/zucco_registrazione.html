@@ -1,8 +1,8 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="../style/style.css">
-<script src="js_registrazione/scriptRegistrazione.js"></script> <!-- AGGIUNTO SCRIPT -->
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/scriptRegistrazione.js"></script> <!-- AGGIUNTO SCRIPT -->
 
 <br>
 </head>
@@ -10,24 +10,24 @@
 
 <div>
 <h3>REGISTRATI!</h3>
-<form id="form" method="post" action="accesso/accesso.php">
+<form id="form" method="post" action="registrazione.php">
 
 <!-- CASELLE DI TESTO -->
-Username: <input type="text" name="username" id="username" required><br>
-Nome: <input type="text" name="nome" id="nome" required><br>
-Cognome: <input type="text" name="cognome" id="cognome" required><br>
-Email: <input type="email" name="email" d="email" required><br>
-Password: <input type="password" name="password" id="password" required><br>
-Conferma Password: <input type="password" name="passwordConfermata" id="passwordConfermata" required><br>
+Username: <input class="input_text" type="text" name="username" id="username" required><br>
+Nome: <input class="input_text" type="text" name="nome" id="nome" required><br>
+Cognome: <input class="input_text" type="text" name="cognome" id="cognome" required><br>
+Email: <input class="input_text" type="email" name="email" d="email" required><br>
+Password: <input class="input_text" type="password" name="password" id="password" required><br>
+Conferma Password: <input  class="input_text" type="password" name="passwordConfermata" id="passwordConfermata" required><br>
 <br>
-<input type="submit" name="send" value="INVIA" class="pulsante_invia">
+<input type="submit" name="send" value="INVIA" class="submit">
 
 <!-- LABEL ERRORE -->
-  <label id="msg_errore"></label>
+  <label class="error" id="msg_errore"></label>
   <br><br>
 </form>
 
-<a href='../accesso/zucco_accesso.html'><button>ACCEDI</button></a>
+<a href='../html/zucco_accesso.html'><button>ACCEDI</button></a>
 
 </div>
 </body>
