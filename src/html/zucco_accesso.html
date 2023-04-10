@@ -1,33 +1,35 @@
 <html>
-<head>
+  <head>
 
-<link rel="stylesheet" href="../style/style.css">
-<script src="js/scriptAccesso.js"></script> <!-- AGGIUNTO SCRIPT -->
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/scriptAccesso.js"  async defer></script> <!-- AGGIUNTO SCRIPT -->
 
-<br>
-</head>
-<body>
+  
+  </head>
+  <body>
 
-<div>
-<h3>BENVENUTO!</h3>
-<form method="post" action="accesso/accesso.php">
+    <div>
+      <h3>BENVENUTO!</h3>
+      <form onsubmit="return false" id="form_accesso">
 
-<!-- CASELLE DI TESTO -->
-Username: <input type="text" name="username" required><br>
+        <!-- CASELLE DI TESTO -->
+        Username: <input class="input_text" type="text" name="username" id="username" required><br>
 
-<!-- PASSWORD -->
-Password: <input type="password" name="password" id="password" required><br>
-<br>
-<a href='editUser/forgotPassword.php'>Password dimenticata?</a>
-<input type="submit" name="send" value="INVIA" class="pulsante_invia">
+        <!-- PASSWORD -->
+        Password: <input class="input_text" type="password" name="password" id="password" required><br>
+        <br>
+        <input type="submit" name="send" id="submit" value="INVIA" class="submit">
+        <br>
+        <a href=''>Password dimenticata?</a>
+        
 
-<!-- LABEL ERRORE -->
-  <label id="msg_errore"></label>
-  <br><br>
-</form>
+        <!-- LABEL ERRORE -->
+        <br>
+        <label class="error" id="msg_errore"></label>
+      </form>
 
-<a href='../registrazione/zucco_registrazione.html'><button>REGISTRATI</button></a>
+      <a href='../registrazione/zucco_registrazione.html'><button>REGISTRATI</button></a>
 
-</div>
-</body>
+    </div>
+  </body>
 </html>
