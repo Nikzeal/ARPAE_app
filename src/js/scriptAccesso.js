@@ -26,11 +26,12 @@ function controlli_input(form, usernameInput, passwordInput, errorLabel)  {
 			return;
 		}
 		//verifica spazi nell'username
-		else if(usernameInput.value.trim().includes(' ')){
+		else if((usernameInput.value.trim().includes(' ')) || (usernameInput.value.startsWith(' ')) || (usernameInput.value.endsWith(' '))){
 			//showError("L'username non puo' contenere spazi");
 			errorLabel.innerHTML = "L'username non puo' contenere spazi";
 			return;	
 		}
+		
 		//verifica lunghezza password
 		else if(passwordInput.value.length < 8){
 			errorLabel.innerHTML = "La password deve essere di almeno 8 caratteri";
