@@ -7,6 +7,7 @@ function attivaEventi() {
 	const usernameInput = document.getElementById("username");
     const passwordInput = document.getElementById("password");
     const passwordConfermataInput = document.getElementById("passwordConfermata");
+	const codiceInput = document.getElementById("codice");
 	const errorLabel = document.getElementById('msg_errore');
 
 	// Aggiunta di un ascoltatore per l'invio del form
@@ -31,6 +32,12 @@ function attivaEventi() {
 		showError("La password deve contenere numeri e lettere");
 		return;	
 		//controlli PASSWORD
+	}
+
+	if(codiceInput.value.length!=16){
+		showError("Il codice verifica devve essere di 16 caratteri");
+		return;	
+		//controlli codice 
 	}
 	
 
