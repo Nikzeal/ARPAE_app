@@ -8,15 +8,16 @@ function init() {
 	const passwordInput = document.getElementById('password');
 	const errorLabel = document.getElementById('msg_errore');
 	const res_text = document.getElementById('response');
+	const xhr = new XMLHttpRequest();
 
 	// Aggiunta di un ascoltatore per l'invio del form
-	form.addEventListener("submit", controlli_input.bind(null, form, usernameInput, passwordInput, errorLabel, res_text) );
+	form.addEventListener("submit", controlli_input.bind(null, form, usernameInput, passwordInput, errorLabel, res_text, xhr) );
 	
 
 }
 
 
-function controlli_input(form, usernameInput, passwordInput, errorLabel, res_text)  {
+function controlli_input(form, usernameInput, passwordInput, errorLabel, res_text, xhr)  {
 	
 		
 		// Verifica campi non vuoti (non necessario)
@@ -39,15 +40,15 @@ function controlli_input(form, usernameInput, passwordInput, errorLabel, res_tex
 			return;	
 		}
 		else{
+			sendData(usernameInput, passwordInput, errorLabel, res_text, xhr);
 			form.reset();
-			sendData(usernameInput, passwordInput, errorLabel, res_text);
 		}
 		 
 		
 		
 }
 
-function sendData(usernameInput, passwordInput, errorLabel, res_text){
+function sendData(usernameInput, passwordInput, errorLabel, res_text, xhr){
 
 	console.log("mandare i dati");
 
@@ -62,7 +63,7 @@ function sendData(usernameInput, passwordInput, errorLabel, res_text){
 
 	try {
 
-		let url = "http://localhost:8080/ARPAE_webservices/RegistrazioneUtente";
+		let url = "http://localhost:8080/ARPAE_webservices/AccessoUtenti";
 		xhr.open('POST', url);
 		xhr.onload = function () { gestisciRisposta(this); };
 		xhr.send(Datijson);

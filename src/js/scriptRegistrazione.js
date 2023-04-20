@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', attivaEventi );
+document.addEventListener('DOMContentLoaded', init() );
 
-function attivaEventi() {
+function init() {
 
 	// Riferimenti agli elementi HTML
 	const form = document.getElementById('form');
@@ -13,9 +13,10 @@ function attivaEventi() {
 	const codiceInput = document.getElementById("codice");
 	const errorLabel = document.getElementById('msg_errore');
 	const res_text = document.getElementById('response');
+	const xhr = new XMLHttpRequest();
 	
 	// Aggiunta di un ascoltatore per l'invio del form
-	form.addEventListener('submit', controlli_input.bind(null, form, nomeInput, cognomeInput, usernameInput, emailInput, passwordInput, confirmPassword, codiceInput, errorLabel, res_text) );
+	form.addEventListener("submit", controlli_input.bind(null, form, nomeInput, cognomeInput, usernameInput, emailInput, passwordInput, confirmPassword, codiceInput, errorLabel, res_text, xhr) );
 
 	
 
@@ -23,7 +24,7 @@ function attivaEventi() {
 
 
 
-function controlli_input(form, nomeInput, cognomeInput, usernameInput, emailInput, passwordInput, confirmPassword, codiceInput, errorLabel, res_text)  {
+function controlli_input(form, nomeInput, cognomeInput, usernameInput, emailInput, passwordInput, confirmPassword, codiceInput, errorLabel, res_text, xhr)  {
 	
 		
 	//da controllare anche nome, cognome ed email IMANEEEE
@@ -32,8 +33,6 @@ function controlli_input(form, nomeInput, cognomeInput, usernameInput, emailInpu
 		errorLabel.innerHTML = "L'username non puo' contenere spazi";
 		return;
 	}
-
-
 
     if(passwordInput.value.length<8){
 		errorLabel.innerHTML =  "La password deve essere di minimo 8 caratteri";
@@ -55,15 +54,13 @@ function controlli_input(form, nomeInput, cognomeInput, usernameInput, emailInpu
 		
 	}
 	else{
+		sendData(nomeInput, cognomeInput, usernameInput, emailInput, passwordInput, confirmPassword, codiceInput, errorLabel, res_text, xhr);
 		form.reset();
-		sendData(nomeInput, cognomeInput, usernameInput, emailInput, passwordInput, confirmPassword, codiceInput, errorLabel, res_text);
 	}
 		 
-		
-		
 }
 
-function sendData(nomeInput, cognomeInput, usernameInput, emailInput, passwordInput, confirmPassword, codiceInput, res_text){
+function sendData(nomeInput, cognomeInput, usernameInput, emailInput, passwordInput, confirmPassword, codiceInput, errorLabel, res_text, xhr){
 	
 	console.log("mandare i dati");
 
@@ -84,7 +81,7 @@ function sendData(nomeInput, cognomeInput, usernameInput, emailInput, passwordIn
 
 	try{
        
-        let url = "http://localhost:8080/ARPAE_webservices/RegistrazioneUtente"; 
+        let url = "http://localhost:8080/ARPAE_webservices/RegistrazioneUtenti"; 
         xhr.open('POST', url);
         xhr.onload = function() { gestisciRisposta(this); }; 
         xhr.send(Datijson);
