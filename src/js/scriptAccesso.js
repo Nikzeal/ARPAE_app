@@ -79,9 +79,11 @@ function sendData(usernameInput, passwordInput, errorLabel, res_text, xhr){
 			//jwt
 			let response = e.responseText;
 			console.log(e.responseText);
-			//da implementare con libreria jsCoookies 
+
+			//senza xampp
 			localStorage.setItem('info', response);
-			
+			//con xampp
+			//da implementare con libreria jsCoookies 
 			document.cookie = 'info=' + response + '; expires=' + new Date(2023, 3, 22).toUTCString  +  '; path=/';
 			
 
