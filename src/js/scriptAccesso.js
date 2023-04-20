@@ -48,7 +48,7 @@ function controlli_input(form, usernameInput, passwordInput, errorLabel, res_tex
 }
 
 function sendData(usernameInput, passwordInput, errorLabel, res_text){
-	
+
 	console.log("mandare i dati");
 
 	let dati = {
@@ -80,6 +80,7 @@ function sendData(usernameInput, passwordInput, errorLabel, res_text){
 
 		}
 	}
+	
 }
 
 /* Funzione per visualizzare un messaggio di errore. Non trovo necessario scrivere una funzione per stampare un messaggio

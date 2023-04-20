@@ -28,19 +28,19 @@ function controlli_input(form, nomeInput, cognomeInput, usernameInput, emailInpu
 		
 	//da controllare anche nome, cognome ed email IMANEEEE
 	errorLabel.innerHTML = "";
-	if((usernameInput.value.trim().includes(' ')) || (usernameInput.value.startsWith(' ')) || (usernameInput.value.endsWith(' '))){
+	if(usernameInput.value.trim().includes(' ')){
 		errorLabel.innerHTML = "L'username non puo' contenere spazi";
 		return;
 	}
-
-
 
     if(passwordInput.value.length<8){
 		errorLabel.innerHTML =  "La password deve essere di minimo 8 caratteri";
 		return;		
 	}else if(passwordInput.value != confirmPassword.value){
+
 		errorLabel.innerHTML =  "Le password non coincidono";
 		return;	
+		
 	}else if(!(/\d/.test(confirmPassword.value))){ //che e' sta roba?
 
 		errorLabel.innerHTML =  "La password deve contenere numeri e lettere";
@@ -48,7 +48,7 @@ function controlli_input(form, nomeInput, cognomeInput, usernameInput, emailInpu
 		
 	}
 
-	else if(codiceInput.value.length!=16){
+	if(codiceInput.value.length!=16){
 
 		errorLabel.innerHTML =  "Il codice verifica devve essere di 16 caratteri";
 		return;	
