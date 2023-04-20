@@ -37,10 +37,8 @@ function controlli_input(form, nomeInput, cognomeInput, usernameInput, emailInpu
 		errorLabel.innerHTML =  "La password deve essere di minimo 8 caratteri";
 		return;		
 	}else if(passwordInput.value != confirmPassword.value){
-
 		errorLabel.innerHTML =  "Le password non coincidono";
 		return;	
-		
 	}else if(!(/\d/.test(confirmPassword.value))){ //che e' sta roba?
 
 		errorLabel.innerHTML =  "La password deve contenere numeri e lettere";
