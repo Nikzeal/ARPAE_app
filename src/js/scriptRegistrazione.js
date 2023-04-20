@@ -54,7 +54,7 @@ function controlli_input(form, nomeInput, cognomeInput, usernameInput, emailInpu
 	}
 	else{
 		form.reset();
-		sendData(nomeInput, cognomeInput, usernameInput, emailInput, passwordInput, confirmPassword, codiceInput);
+		sendData(nomeInput, cognomeInput, usernameInput, emailInput, passwordInput, confirmPassword, codiceInput, errorLabel, res_text);
 	}
 		 
 		
@@ -62,6 +62,7 @@ function controlli_input(form, nomeInput, cognomeInput, usernameInput, emailInpu
 }
 
 function sendData(nomeInput, cognomeInput, usernameInput, emailInput, passwordInput, confirmPassword, codiceInput, res_text){
+	
 	console.log("mandare i dati");
 
 	 let dati = {
