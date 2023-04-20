@@ -9,6 +9,7 @@ function init() {
 	const errorLabel = document.getElementById('msg_errore');
 	const res_text = document.getElementById('response');
 	const xhr = new XMLHttpRequest();
+	
 
 	// Aggiunta di un ascoltatore per l'invio del form
 	form.addEventListener("submit", controlli_input.bind(null, form, usernameInput, passwordInput, errorLabel, res_text, xhr) );
@@ -75,9 +76,14 @@ function sendData(usernameInput, passwordInput, errorLabel, res_text, xhr){
 	function gestisciRisposta(e) {
 		if (e.status == 200) {
 
+			//jwt
 			let response = e.responseText;
 			console.log(e.responseText);
-			res_text.innerHTML = `${response}`;
+			//da implementare con libreria jsCoookies 
+			localStorage.setItem('info', response);
+			
+			document.cookie = 'info=' + response + '; expires=' + new Date(2023, 3, 22).toUTCString  +  '; path=/';
+			
 
 		}
 	}
